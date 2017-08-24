@@ -28,7 +28,7 @@ Multi-dimensional Functional Principal Component Analysis
         * binning : 布林值。選擇在進行LLR估計時，是否將資料合併到格點上，預設為True。
         * bin\_weight : 布林值。當資料合併時，是否進行線性合併，預設為True。
         * ker\_fun : 字串，預設為'Epan'。LLR估計時選用的核函數，僅提供Epanechnikov及高斯核函數。
-            * 'Epan': Epanechnikov核函數，<a><img src="https://latex.codecogs.com/gif.latex?$K(x)&space;=&space;\cfrac{3}{4}&space;(1&space;-&space;x^2)&space;,&space;\;&space;|x|&space;\leq&space;1$" title="$K(x) = \cfrac{3}{4} (1 - x^2) , \; |x| \leq 1$" /></a>，其餘為0，
+            * 'Epan': Epanechnikov核函數，<a><img src="https://latex.codecogs.com/gif.latex?\inline&space;$K(x)&space;=&space;\cfrac{3}{4}&space;(1&space;-&space;x^2)&space;,&space;\;&space;|x|&space;\leq&space;1$" title="$K(x) = \cfrac{3}{4} (1 - x^2) , \; |x| \leq 1$" /></a>，其餘為0，
                跟其他核函數相比，理論上此核函數估計最好。
             * 'Gaussian': 高斯核函數，<span class="math inline">$K(x) = \frac{1}{\sqrt{2 \pi}} e^{- x^2 / 2}$</span>，
                當資料數少時建議選用此核函數。
