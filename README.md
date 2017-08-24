@@ -30,7 +30,7 @@ Multi-dimensional Functional Principal Component Analysis
         * ker\_fun : 字串，預設為'Epan'。LLR估計時選用的核函數，僅提供Epanechnikov及高斯核函數。
             * 'Epan': Epanechnikov核函數，<a><img src="https://latex.codecogs.com/gif.latex?\inline&space;$K(x)&space;=&space;0.75&space;\cdot&space;~&space;(1&space;-&space;x^2)&space;,&space;\;&space;|x|&space;\leq&space;1$" title="$K(x) = 0.75 \cdot ~ (1 - x^2) , \; |x| \leq 1$" /></a>，其餘為0，
                跟其他核函數相比，理論上此核函數估計最好。
-            * 'Gaussian': 高斯核函數，<span class="math inline">$K(x) = \frac{1}{\sqrt{2 \pi}} e^{- x^2 / 2}$</span>，
+            * 'Gaussian': 高斯核函數，<a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$K(x)&space;=&space;e^{-&space;x^2&space;/&space;2}&space;/&space;\sqrt{2&space;\pi}$" title="$K(x) = e^{- x^2 / 2} / \sqrt{2 \pi}$" /></a>，
                當資料數少時建議選用此核函數。
         * dtype: 字串，預設為'f4'。在進行GPU通用運算時，由於雙浮點數計算速度較慢，因此提供此參數讓使用者選用計算時浮點數的精準度。
     * 參數輸出: 一組元素個數為<span class="math inline">$\prod_{i = 1}^{d} g_i$</span>的向量，依照輸入參數x0格點順序所得的函數點估計值。
@@ -46,8 +46,10 @@ Multi-dimensional Functional Principal Component Analysis
         * binning : 布林值。選擇在進行LLR估計時，是否將資料合併到格點上，預設為True。
         * bin\_weight : 布林值。當資料合併時，是否進行線性合併，預設為True。
         * ker\_fun : 字串，預設為'Epan'。LLR估計時選用的核函數，僅提供Epanechnikov及高斯核函數。
-            * 'Epan': Epanechnikov核函數，<a><img src="https://latex.codecogs.com/gif.latex?$K(x)&space;=&space;\cfrac{3}{4}&space;(1&space;-&space;x^2)&space;,&space;\;&space;|x|&space;\leq&space;1$" title="$K(x) = \cfrac{3}{4} (1 - x^2) , \; |x| \leq 1$" /></a>，其餘為0，理論上為最佳的核函數。
-            * 'Gaussian': 高斯核函數，$K(x) = \frac{1}{\sqrt{2 \pi}} e^{- x^2 / 2}$，當資料數少時建議選用此核函數。
+            * 'Epan': Epanechnikov核函數，<a><img src="https://latex.codecogs.com/gif.latex?\inline&space;$K(x)&space;=&space;0.75&space;\cdot&space;~&space;(1&space;-&space;x^2)&space;,&space;\;&space;|x|&space;\leq&space;1$" title="$K(x) = 0.75 \cdot ~ (1 - x^2) , \; |x| \leq 1$" /></a>，其餘為0，
+               跟其他核函數相比，理論上此核函數估計最好。
+            * 'Gaussian': 高斯核函數，<a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$K(x)&space;=&space;e^{-&space;x^2&space;/&space;2}&space;/&space;\sqrt{2&space;\pi}$" title="$K(x) = e^{- x^2 / 2} / \sqrt{2 \pi}$" /></a>，
+               當資料數少時建議選用此核函數。
     * 輸出: 元素個數為d的向量，由輸入參數h裡所選取出使得均方誤差最小的帶寬。
 
 3. Fpca:假設有N組觀測函數，每組觀測函數上有$N_i$個點，維度為d維，$\bg = (g_1, \dots, g_d)'$為估計點在每個維度上的格點數量。
@@ -66,8 +68,10 @@ Multi-dimensional Functional Principal Component Analysis
         * binning: 布林值。選擇在進行LLR估計時，是否將資料合併到格點上，預設為True。
         * bin\_weight: 布林值。當資料合併時，是否進行線性合併，預設為True。
         * ker\_fun: 字串，預設為'Epan'。LLR估計時選用的核函數，僅提供Epanechnikov及高斯核函數。
-            * 'Epan': Epanechnikov核函數，<a><img src="https://latex.codecogs.com/gif.latex?$K(x)&space;=&space;\cfrac{3}{4}&space;(1&space;-&space;x^2)&space;,&space;\;&space;|x|&space;\leq&space;1$" title="$K(x) = \cfrac{3}{4} (1 - x^2) , \; |x| \leq 1$" /></a>，其餘為0，跟其他核函數相比，理論上此核函數估計最好。
-            * 'Gaussian': 高斯核函數，$K(x) = \frac{1}{\sqrt{2 \pi}} e^{- x^2 / 2}$，當資料數少時建議選用此核函數。
+            * 'Epan': Epanechnikov核函數，<a><img src="https://latex.codecogs.com/gif.latex?\inline&space;$K(x)&space;=&space;0.75&space;\cdot&space;~&space;(1&space;-&space;x^2)&space;,&space;\;&space;|x|&space;\leq&space;1$" title="$K(x) = 0.75 \cdot ~ (1 - x^2) , \; |x| \leq 1$" /></a>，其餘為0，
+               跟其他核函數相比，理論上此核函數估計最好。
+            * 'Gaussian': 高斯核函數，<a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$K(x)&space;=&space;e^{-&space;x^2&space;/&space;2}&space;/&space;\sqrt{2&space;\pi}$" title="$K(x) = e^{- x^2 / 2} / \sqrt{2 \pi}$" /></a>，
+               當資料數少時建議選用此核函數。
         * bw\_select: 字串，預設為'Partition'。LLR選擇帶寬的準則。
             * 'Partition': 將資料切分成訓練集和驗證集，由驗證集估算均方誤差。
             * 'LeaveOneOut': 使用留一曲線交叉驗證法，只隨機抽出100條曲線做驗證，若觀測函數小於100時則全選取。
