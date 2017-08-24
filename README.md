@@ -14,7 +14,7 @@ Multi-dimensional Functional Principal Component Analysis
 * [Build and install from github](https://github.com/arrayfire/arrayfire)  
 
 # Usage:
-假設有N組資料，d維度，$\bg = (g_1, \dots, g_d)'$為估計點在每個維度上的格點數量。  
+假設有N組資料，d維度，<a href="https://www.codecogs.com/eqnedit.php?latex=$\mbox{\bf&space;g}&space;=&space;(g_{1},&space;\dots,&space;g_{d})'$" target="_blank"><img src="https://latex.codecogs.com/svg.latex?$\mbox{\bf&space;g}&space;=&space;(g_{1},&space;\dots,&space;g_{d})'$" title="$\mbox{\bf g} = (g_{1}, \dots, g_{d})'$" /></a>為估計點在每個維度上的格點數量。  
 1. Lpr: 此函式為LLR的實現方法，其帶寬可由CV\_Partition函式決定。  
 
         Lpr(x, y, x0, h, binning = True, bin_weight = True, ker_fun = 'Epan', dtype = 'f4')
