@@ -52,7 +52,7 @@ Multi-dimensional Functional Principal Component Analysis
                當資料數少時建議選用此核函數。
     * 輸出: 元素個數為d的向量，由輸入參數h裡所選取出使得均方誤差最小的帶寬。
 
-3. Fpca:假設有N組觀測函數，每組觀測函數上有$N_i$個點，維度為d維，$\bg = (g_1, \dots, g_d)'$為估計點在每個維度上的格點數量。
+3. Fpca:假設有N組觀測函數，每組觀測函數上有$N_i$個點，維度為d維，<a><img src="https://latex.codecogs.com/svg.latex?$\mbox{\bf&space;g}&space;=&space;(g_{1},&space;\dots,&space;g_{d})'$" title="$\mbox{\bf g} = (g_{1}, \dots, g_{d})'$" /></a>為估計點在每個維度上的格點數量。
 
         Fpca(x, y, x0, h_mean, h_cov, h_cov_dia, fve = 0.85, binning = True, bin_weight = True, 
              ker_fun = 'Epan', bw_select = 'Partition', dtype = 'f4')
@@ -80,7 +80,7 @@ Multi-dimensional Functional Principal Component Analysis
             * 'f8':雙精度浮點數。
     * 輸出會產生fpca物件，其物件的成員變數有:
         * mean\_fun: <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(g_1 * \dots * g_d * d)$" /></a>陣列，由LLR估計的平均函數。
-        * cov\_fun: (g_1 * ... * g_d * g_1 * ... * g_d * 2d)陣列，由LLR估計的共變異數函數。
+        * cov\_fun: <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(g_1&space;*&space;\dots&space;*&space;g_d&space;*space;g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;2d)$" title="$(g_1 * \dots * g_d * g_1 * \dots * g_d * 2d)$" /></a>陣列，由LLR估計的共變異數函數。
         * cov\_dia: <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(g_1 * \dots * g_d * d)$" /></a>陣列，由LLR估計在共變異數函數對腳線上的曲線。
         * num\_eig\_pairs: 正整數，由FVE選取的前$K$組特徵對。
         * eig\_fun: <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(K&space;*&space;g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(K * g_1 * \dots * g_d * d)$" /></a>陣列，K = num\_eig\_pairs，經由變異數函數得到的前K組特徵函數。
@@ -98,4 +98,4 @@ Multi-dimensional Functional Principal Component Analysis
         * y : 元素個數為N的list，list裡面為$N_i$陣列，資料觀測值。
     * 輸出一個list，依照順序為:
         * fpc\_scores: (N * K)陣列。將$X(\bt)$中心化後，投影在特徵函數上的主成份分數。
-        * restruct\_fun: $(N * g_1 * ... * g_d, d)$陣列。重現在格點上的$X(\bt)$函數。
+        * restruct\_fun:  <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(N&space;*&space;g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(N * g_1 * \dots * g_d * d)$" /></a>陣列。重現在格點上的$X(\bt)$函數。
