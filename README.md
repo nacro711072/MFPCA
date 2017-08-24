@@ -38,18 +38,17 @@ Multi-dimensional Functional Principal Component Analysis
 2. CV\_Partition: 此函式為選取帶寬的實現方法，用於LLR估計。
 
         CV_Partition(x, y, x0, h, n_train = None, binning = True, bin_weight = True, ker_fun = 'Epan')
-
-* 參數輸入:
-    * x : (N * d) 陣列，觀測點。
-    * y : 元素個數為N的向量，觀測值。
-    * x0 : $(g_1 * \dots * g_d, d)$的陣列，估計點。
-    * h : (n * d)陣列，n為使用者樹入選取代寬的個數。
-    * binning : 布林值。選擇在進行LLR估計時，是否將資料合併到格點上，預設為True。
-    * bin\_weight : 布林值。當資料合併時，是否進行線性合併，預設為True。
-    * ker\_fun : 字串，預設為'Epan'。LLR估計時選用的核函數，僅提供Epanechnikov及高斯核函數。
-        * 'Epan': Epanechnikov核函數，$K(x) = \frac{3}{4}(1 - x^2), \; |x| \leq 1$，其餘為0，理論上為最佳的核函數。
-        * 'Gaussian': 高斯核函數，$K(x) = \frac{1}{\sqrt{2 \pi}} e^{- x^2 / 2}$，當資料數少時建議選用此核函數。
-* 輸出: 元素個數為d的向量，由輸入參數h裡所選取出使得均方誤差最小的帶寬。
+    * 參數輸入:
+        * x : (N * d) 陣列，觀測點。
+        * y : 元素個數為N的向量，觀測值。
+        * x0 : $(g_1 * \dots * g_d, d)$的陣列，估計點。
+        * h : (n * d)陣列，n為使用者樹入選取代寬的個數。
+        * binning : 布林值。選擇在進行LLR估計時，是否將資料合併到格點上，預設為True。
+        * bin\_weight : 布林值。當資料合併時，是否進行線性合併，預設為True。
+        * ker\_fun : 字串，預設為'Epan'。LLR估計時選用的核函數，僅提供Epanechnikov及高斯核函數。
+            * 'Epan': Epanechnikov核函數，$K(x) = \frac{3}{4}(1 - x^2), \; |x| \leq 1$，其餘為0，理論上為最佳的核函數。
+            * 'Gaussian': 高斯核函數，$K(x) = \frac{1}{\sqrt{2 \pi}} e^{- x^2 / 2}$，當資料數少時建議選用此核函數。
+    * 輸出: 元素個數為d的向量，由輸入參數h裡所選取出使得均方誤差最小的帶寬。
 
 3. Fpca:假設有N組觀測函數，每組觀測函數上有$N_i$個點，維度為d維，$\bg = (g_1, \dots, g_d)'$為估計點在每個維度上的格點數量。
 
@@ -86,14 +85,13 @@ Multi-dimensional Functional Principal Component Analysis
         * mean\_bw: d維向量，估計平均函數時選用的帶寬。
         * cov\_bw: 2 * d維向量，估計共變異函數時選用的帶寬。
         * cov\_dia\_bw: d維向量，估計誤差變異數時選用的帶寬。
-* 成員函式:
+* 成員函式: 此函式主要目的在於重建$X(\bt)$函數。由使用者輸入資料點與觀測值，藉由PACE估算主成份分數，再和已估算好的平均函數和特徵函數，將$X(\bt)$曲線重現。
 
         Restruct_Fun(x, y)
-    此函式主要目的在於重建$X(\bt)$函數。由使用者輸入資料點與觀測值，藉由PACE估算主成份分數，再和已估算好的平均函數和特徵函數，將$X(\bt)$曲線重現。
-    輸入參數:
-      \item x : 元素個數為newN的list，list裡面為($N_i$ * d)陣列，資料點，newN為使用者輸入進來的樣本函數個數。
-      \item y : 元素個數為N的list，list裡面為$N_i$陣列，資料觀測值。
-    輸出一個list，依照順序為:
-      \item fpc\_scores: (N * K)陣列。將$X(\bt)$中心化後，投影在特徵函數上的主成份分數。
-      \item restruct\_fun: $(N * g_1 * \dots * g_d, d)$陣列。重現在格點上的$X(\bt)$函數。
-
+    
+    * 輸入參數:
+        * x : 元素個數為newN的list，list裡面為($N_i$ * d)陣列，資料點，newN為使用者輸入進來的樣本函數個數。
+        * y : 元素個數為N的list，list裡面為$N_i$陣列，資料觀測值。
+    * 輸出一個list，依照順序為:
+        * fpc\_scores: (N * K)陣列。將$X(\bt)$中心化後，投影在特徵函數上的主成份分數。
+        * restruct\_fun: $(N * g_1 * \dots * g_d, d)$陣列。重現在格點上的$X(\bt)$函數。
