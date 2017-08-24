@@ -41,7 +41,7 @@ Multi-dimensional Functional Principal Component Analysis
     * 參數輸入:
         * x : (N * d) 陣列，觀測點。
         * y : 元素個數為N的向量，觀測值。
-        * x0 : $(g_1 * \dots * g_d, d)$的陣列，估計點。
+        * x0 : <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(g_1 * \dots * g_d * d)$" /></a>的陣列，估計點。
         * h : (n * d)陣列，n為使用者樹入選取代寬的個數。
         * binning : 布林值。選擇在進行LLR估計時，是否將資料合併到格點上，預設為True。
         * bin\_weight : 布林值。當資料合併時，是否進行線性合併，預設為True。
@@ -60,7 +60,7 @@ Multi-dimensional Functional Principal Component Analysis
     * 參數輸入:
         * x : 元素個數為N的list，list裡面為($N_i$ * d)陣列，觀測點。
         * y : 元素個數為N的list，list裡面為$N_i$陣列，觀測值。
-        * x0: $(g_1 * \dots * g_d, d)$的陣列，估計點。
+        * x0: <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(g_1 * \dots * g_d * d)$" /></a>的陣列，估計點。
         * h\_mean : (n * d)陣列，估計平均函數的候選帶寬。
         * h\_cov : (n * 2d)陣列，估計共變異數函數的候選帶寬。
         * h\_cov\_dia : (n * d)陣列，估計誤差的變異數的候選帶寬。
@@ -79,11 +79,11 @@ Multi-dimensional Functional Principal Component Analysis
             * 'f4':單精度浮點數。
             * 'f8':雙精度浮點數。
     * 輸出會產生fpca物件，其物件的成員變數有:
-        * mean\_fun: (g_1 * ... * g_d * d)陣列，由LLR估計的平均函數。
+        * mean\_fun: <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(g_1 * \dots * g_d * d)$" /></a>陣列，由LLR估計的平均函數。
         * cov\_fun: (g_1 * ... * g_d * g_1 * ... * g_d * 2d)陣列，由LLR估計的共變異數函數。
-        * cov\_dia: (g_1 * ... * g_d * d)陣列，由LLR估計在共變異數函數對腳線上的曲線。
+        * cov\_dia: <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(g_1 * \dots * g_d * d)$" /></a>陣列，由LLR估計在共變異數函數對腳線上的曲線。
         * num\_eig\_pairs: 正整數，由FVE選取的前$K$組特徵對。
-        * eig\_fun: (K * g_1 * ... * g_d * d)陣列，K = num\_eig\_pairs，經由變異數函數得到的前K組特徵函數。
+        * eig\_fun: <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(Kspace;*&space;g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(K * g_1 * \dots * g_d * d)$" /></a>陣列，K = num\_eig\_pairs，經由變異數函數得到的前K組特徵函數。
         * fpc\_scores: (N * K)陣列，K = num\_eig\_pairs，將$X(\bt)$函數投影在特徵函數上的主成份分數。
         * sigma2: 浮點數，為誤差變異數的估計值。
         * mean\_bw: d維向量，估計平均函數時選用的帶寬。
