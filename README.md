@@ -97,5 +97,5 @@ Multi-dimensional Functional Principal Component Analysis
         * x : 元素個數為newN的list，list裡面為($N_i$ * d)陣列，資料點，newN為使用者輸入進來的樣本函數個數。
         * y : 元素個數為N的list，list裡面為$N_i$陣列，資料觀測值。
     * 輸出一個list，依照順序為:
-        * fpc\_scores: (N * K)陣列。將<a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$X(\bf&space;t)$" title="$X(\bf t)$<a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$X(\bf&space;t)$" title="$X(\bf t)$" /></a>" /></a>中心化後，投影在特徵函數上的主成份分數。
+        * fpc\_scores: (N * K)陣列。將<a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$X(\bf&space;t)$" title="$X(\bf t)$</a>中心化後，投影在特徵函數上的主成份分數。
         * restruct\_fun:  <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(N&space;*&space;g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(N * g_1 * \dots * g_d * d)$" /></a>陣列。重現在格點上的<a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$X(\bf&space;t)$" title="$X(\bf t)$" /></a>函數。
