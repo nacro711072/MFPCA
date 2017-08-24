@@ -83,7 +83,7 @@ Multi-dimensional Functional Principal Component Analysis
         * cov\_fun: (g_1 * ... * g_d * g_1 * ... * g_d * 2d)陣列，由LLR估計的共變異數函數。
         * cov\_dia: <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(g_1 * \dots * g_d * d)$" /></a>陣列，由LLR估計在共變異數函數對腳線上的曲線。
         * num\_eig\_pairs: 正整數，由FVE選取的前$K$組特徵對。
-        * eig\_fun: <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(Kspace;*&space;g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(K * g_1 * \dots * g_d * d)$" /></a>陣列，K = num\_eig\_pairs，經由變異數函數得到的前K組特徵函數。
+        * eig\_fun: <a><img src="https://latex.codecogs.com/svg.latex?\inline&space;$(K&space;*&space;g_1&space;*&space;\dots&space;*&space;g_d&space;*&space;d)$" title="$(K * g_1 * \dots * g_d * d)$" /></a>陣列，K = num\_eig\_pairs，經由變異數函數得到的前K組特徵函數。
         * fpc\_scores: (N * K)陣列，K = num\_eig\_pairs，將$X(\bt)$函數投影在特徵函數上的主成份分數。
         * sigma2: 浮點數，為誤差變異數的估計值。
         * mean\_bw: d維向量，估計平均函數時選用的帶寬。
